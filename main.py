@@ -6,11 +6,10 @@ from person import Person
 from stop import Stop
 from road import Road
 from route import Route
+from parser import Parser
 
 
 
-b1 = Bus (10, Time (1), Speed (1,30), [] )
-b2 = Bus (10, Time (1), Speed (1,30), [] )
-b3 = Bus (10, Time (1), Speed (1,30), [] )
-
-b1_fast = 
+parser = Parser("conf.json", "person.txt")
+parser.parse_conf()
+parser.parse_people()

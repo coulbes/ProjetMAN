@@ -1,0 +1,78 @@
+{
+  "stops":
+  [
+    {
+      "name": "A",
+      "roads_linked": [1, 2]
+    },
+    {
+      "name": "B",
+      "roads_linked": [1]
+    },
+    {
+      "name": "C",
+      "roads_linked": [2, 3, 4]
+    },
+    {
+      "name": "D",
+      "roads_linked": [3]
+    },
+    {
+      "name": "E",
+      "roads_linked": [4]
+    }
+  ],
+  "roads":
+  [
+    {
+      "number": 1,
+      "distance": 10,
+      "stops": ["A", "B"]
+    },
+    {
+      "number": 2,
+      "distance": 4,
+      "stops": ["A", "C"]
+    },
+    {
+      "number": 3,
+      "distance": 12,
+      "stops": ["C", "D"]
+    },
+    {
+      "number": 4,
+      "distance": 4,
+      "stops": ["C", "E"]
+    }
+  ],
+  "buses": [
+    {
+      "capacity": 10,
+      "loading_speed": 1,
+      "unloading_speed": 1,
+      "speed": "1/30",
+      "loop": ["B", "A", "C", "E", "C", "A"]
+    },
+    {
+      "capacity": 10,
+      "loading_speed": 1,
+      "unloading_speed": 1,
+      "speed": "1/30",
+      "loop": ["D", "C", "E", "C"]
+    },
+    {
+      "capacity": 10,
+      "loading_speed": 1,
+      "unloading_speed": 1,
+      "speed": "1/30",
+      "loop": ["B", "E", "D"]
+    },
+    {
+      "capacity": 2,
+      "loading_speed": 1,
+      "unloading_speed": 1,
+      "speed": "1/10",
+      "loop": ["A", "C"]
+    }
+  ]
+}
