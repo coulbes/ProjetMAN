@@ -1,0 +1,48 @@
+{
+  "stops":
+  [
+    {
+      "name": "A",
+      "roads_linked": [1, 2]
+    },
+    {
+      "name": "B",
+      "roads_linked": [1]
+    },
+    {
+      "name": "C",
+      "roads_linked": [2, 3, 4]
+    },
+    {
+      "name": "D",
+      "roads_linked": [3]
+    },
+    {
+      "name": "E",
+      "roads_linked": [4]
+    }
+  ],
+  "roads":
+  [
+    {
+      "number": 1,
+      "distance": 10
+    },
+    {
+      "number": 2,
+      "distance": 4
+    },
+    {
+      "number": 3,
+      "distance": 12
+    },
+    {
+      "number": 4,
+      "distance": 4
+    }
+  ]
+  "buses": [
+    {},
+    {}
+  ]
+}
