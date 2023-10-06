@@ -2,28 +2,56 @@ import json
 from bus import Bus
 from stop import Stop
 from road import Road
+from route import Route
 from speed import Speed
 from time_ import Time
 from distance import Distance
 from person import Person
 
+global buses
+global stops
+global roads
+global people
 
+buses = []
+stops = []
+roads = []
+people = []
 class Parser:
 
   def __init__(self, fn1: str, fn2: str) -> None:
     self.filename_conf = fn1
     self.filename_people = fn2
-    self.buses = []
-    self.stops = []
-    self.roads = []
-    self.people = []
 
   def parse_people(self):
+    splited = []
+    s1: Stop
+    s2: Stop
+    s3: Stop
+    s4: Stop
     with open(self.filename_people, 'r') as file:
       for line in file:
-        for i in line[0]:
-          self.people.append(Person())
-        
+        splited = line.split(" ")
+        for e in stops:
+          if e.name == splited[3][0]:
+            s1 = e
+          if e.name == splited[3][1]:
+            s2 = e
+          if e.name == splited[5][0]:
+            s3 = e
+          if e.name == splited[5][1]:
+            s4 = e
+
+        try:
+          for i in range(int(splited[0])):
+            people.append(
+                Person(Route(Time(int(splited[2])), s1, s2),
+                       Route(Time(int(splited[4])), s3, s4),
+                       splited[1] + str(i)))
+        except UnboundLocalError as err:
+          raise ValueError("Invalid stop name") from err
+        except TypeError as err:
+          raise TypeError("Time is not of type 'int'") from err
 
   def parse_conf(self):
     parsed_json = ""
@@ -35,12 +63,12 @@ class Parser:
 
   def parse_stops(self, dict):
     for stop in dict["stops"]:
-      self.stops.append(Stop(stop["roads_linked"], 0))
+      stops.append(Stop(stop["roads_linked"], [], stop["name"]))
 
   def parse_roads(self, dict):
     for road in dict["roads"]:
-      self.roads.append(
-          Road((road["stops"][0], road["stops"][1]),
+      roads.append(
+          Road(int(road["number"]), (road["stops"][0], road["stops"][1]),
                Distance(int(road["distance"]))))
 
   def parse_buses(self, dict):
@@ -51,6 +79,6 @@ class Parser:
       speed = bus["speed"].split("/")
       s1 = int(speed[0])
       s2 = int(speed[1])
-      self.buses.append(
+      buses.append(
           Bus(bus["capacity"], Time(bus["loading_speed"]),
               Speed(Distance(s1), Time(s2)), bus["loop"]))

@@ -4,8 +4,7 @@ class Time:
     try:
       self._value = int(v)
     except ValueError as err:
-      print(str(type(v).__name__) + " is not of type 'int'")
-      raise TypeError() from err
+      raise TypeError(str(type(v).__name__) + " is not of type 'int'") from err
 
   def __str__(self) -> str:
     return f"{type(self).__name__} value = {self._value}"

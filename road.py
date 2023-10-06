@@ -3,7 +3,8 @@ from distance import Distance
 
 class Road:
 
-  def __init__(self, s, d: Distance) -> None:
+  def __init__(self, n: int, s, d: Distance) -> None:
+    self.number = n
     self.stops = s  # tuple
     self._distance = d
 

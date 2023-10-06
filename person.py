@@ -6,3 +6,4 @@ class Person:
     self.go= g
     self.back = b
     self.name = n
+    
