@@ -2,8 +2,11 @@ from distance import Distance
 from time_ import Time
 
 class Speed:
-
+  # completely over-engineered way to use speed in the program
   def __init__(self, *args) -> None:
+    """
+    creates an instance of Speed either based on speed directly or a distance and time
+    """
 
     if len(args) == 1:
       try:

@@ -1,5 +1,5 @@
 class Distance:
-
+  # completely over-engineered way to use distance in the program
   def __init__(self, v: int) -> None:
     try:
       self._value = int(v)
