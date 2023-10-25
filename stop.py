@@ -9,10 +9,18 @@ class Stop:
   def __str__(self) -> str:
     return f"{self.name}, {self.roads}, {self.queue}"
 
-  
-
   def add_person(self, person):
     self.queue.append(person)
+
+  def add_person_to_bus(self, bus):
+    for person in self.queue:
+      if self.path_to_others.get(person.go.end) == bus:
+        bus.add_person(person)
+        self.queue.remove(person)
+        return person
+    #for person in self.queue:
+    #  if self.path_to_others[person.go.end] == :
+        
 
   def pop_queue(self):
     self.queue.pop()
