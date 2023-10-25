@@ -1,4 +1,5 @@
 from route import Route
+from stop import Stop
 
 class Person:
 
@@ -13,4 +14,7 @@ class Person:
     self.go= g
     self.back = b
     self.name = n
-    
+
+  def go_to_stop(self, stop):
+    stop.add_person(self)
+    #print(len(stop.queue))

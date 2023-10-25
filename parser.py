@@ -34,7 +34,7 @@ class Parser:
 
   def parse_people(self):
     """
-    parse_people parses the people config file. This function should be called after parsing     the universe.
+    parse_people parses the people config file. This function should be called after parsing the universe.
     Result of the parsing are stored in the people global variable
     """
     splited = []
@@ -90,8 +90,6 @@ class Parser:
       if stop.values() =
     print(distance_to_others.keys())
     print(distance_to_others.values())"""
-      
-      
 
   def parse_roads(self, dict):
     for road in dict["roads"]:
@@ -108,5 +106,6 @@ class Parser:
       s1 = int(speed[0])
       s2 = int(speed[1])
       buses.append(
-          Bus(bus["capacity"], Time(bus["loading_speed"]),
+          Bus(bus["capacity"], Time(bus["loading_speed"]), 
+              Time(bus["unloading_speed"]), 
               Speed(Distance(s1), Time(s2)), bus["loop"]))
