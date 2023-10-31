@@ -17,7 +17,7 @@ def main():
 
   for stop in stops:
     stop.how_to_go_to_others(buses, stops)
-    #print(stop.path_to_others.get(buses[0]), "\n")
+    print(stop.path_to_others, "\n")
 
   for p in people:
     #print(p.go.begin, "\n")
@@ -26,8 +26,9 @@ def main():
   #while True:
   #for bus in buses:
   i=0
-  while i<3:
-    buses[0].go_to_next_stop(stops)
+  while i<6:
+    #buses[0].go_to_next_stop(stops)
+    #buses[2].go_to_next_stop(stops)
     i+=1
 
 
