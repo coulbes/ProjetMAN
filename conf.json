@@ -47,6 +47,7 @@
   ],
   "buses": [
     {
+      "name": 1,
       "capacity": 10,
       "loading_speed": 1,
       "unloading_speed": 1,
@@ -54,6 +55,7 @@
       "loop": ["B", "A", "C", "E", "C", "A"]
     },
     {
+      "name": 2,
       "capacity": 10,
       "loading_speed": 1,
       "unloading_speed": 1,
@@ -61,6 +63,7 @@
       "loop": ["D", "C", "E", "C"]
     },
     {
+      "name": 3,
       "capacity": 10,
       "loading_speed": 1,
       "unloading_speed": 1,
@@ -68,6 +71,7 @@
       "loop": ["B", "E", "D"]
     },
     {
+      "name": 4,
       "capacity": 2,
       "loading_speed": 1,
       "unloading_speed": 1,

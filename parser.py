@@ -82,14 +82,6 @@ class Parser:
   def parse_stops(self, dict):
     for stop in dict["stops"]:
       stops.append(Stop(stop["roads_linked"], [], stop["name"]))
-    
-    """for stop in stops:
-      distance_to_others[str(stop.name)] = stop.roads
-    print(distance_to_others)
-    for stop in distance_to_others:
-      if stop.values() =
-    print(distance_to_others.keys())
-    print(distance_to_others.values())"""
 
   def parse_roads(self, dict):
     for road in dict["roads"]:
@@ -98,7 +90,7 @@ class Parser:
                Distance(int(road["distance"]))))
 
   def parse_buses(self, dict):
-    speed = []
+    speed = []  
     s1 = 0
     s2 = 0
     for bus in dict["buses"]:
@@ -106,6 +98,6 @@ class Parser:
       s1 = int(speed[0])
       s2 = int(speed[1])
       buses.append(
-          Bus(bus["capacity"], Time(bus["loading_speed"]), 
+          Bus(bus["name"], bus["capacity"], Time(bus["loading_speed"]), 
               Time(bus["unloading_speed"]), 
               Speed(Distance(s1), Time(s2)), bus["loop"]))

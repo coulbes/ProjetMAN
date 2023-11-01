@@ -7,8 +7,9 @@ from utility import get_stop_by_name
 class Bus:
 
   #remember: rewrite Python language
-  def __init__(self, load_capacity: int, loading_speed: Time,
+  def __init__(self, name, load_capacity: int, loading_speed: Time,
                unloading_speed: Time, speed: Speed, path) -> None:
+    self.name = name
     self.load = []
     self.capacity = load_capacity
     self.loading_speed = loading_speed
@@ -29,6 +30,6 @@ class Bus:
     for stop in stops:
       if self.path[0] == stop.name:
         next_stop = stop
-        print("manage load for stop ", next_stop.name)
+        print("bus", self.name, "manage load for stop ", next_stop.name)
     next_stop.manage_load(self)
     self.path.append(self.path.pop(0))

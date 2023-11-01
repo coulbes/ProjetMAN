@@ -14,6 +14,7 @@ class Person:
     self.go= g
     self.back = b
     self.name = n
+    self.correspondance = None
 
   def go_to_stop(self, stop):
     stop.add_person(self)
