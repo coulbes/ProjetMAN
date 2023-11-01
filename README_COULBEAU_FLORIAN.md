@@ -1,1 +1,8 @@
-mon programme ne gère pas le temps
+-mon programme ne gère pas le temps.
+-la classe parser est là pour initialiser les personnes, arrêts, routes et bus.
+-ils sont tous ajoutés dans des list globale afin de les manipuler au travers des classes.
+-on rajoute dans chaque arret appelé "stop" une variable "path_to_others". c'est un dictionnaire contenant pour clé le nom des autres arrêts et pour valeurs le bus à prendre pour s'y rendre. elle peut aussi contenir pour valeur un tuple de "bus, arret" désignant quelle bus prendre et à quelle arrêt descendre en fonction de si l'arrêt doit prendre une correspondance ou non.
+-cette variable est initialisée grace a la methode "how_to_go_to_others" qui a une conpexité en O(n^2)
+-on ajoute ensuite chaque personne à son premier arrêt grâce a la méthode "go_to_stop" qui a une complexité en O(n)
+-un bus est choisi simplement en fonction de sa vitesse dans la méthode find_direct_bus
+-les Albert sont bloqués pour leur trajet de retour, car on ne traite pas les correspondances dans la fonction manage_load.
